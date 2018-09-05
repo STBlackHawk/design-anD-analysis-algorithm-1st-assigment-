@@ -23,7 +23,7 @@ public class StacK {
         first.next= last;
     }
 
-    public Object Pop(){
+    public void Pop(){
 
     }
 
