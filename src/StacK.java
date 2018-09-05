@@ -1,3 +1,4 @@
+import java.util.NoSuchElementException;
 public class StacK {
 
     private static class Node{
@@ -25,7 +26,7 @@ public class StacK {
 
     public Object Pop(){
         if ( first == null){
-            return -1;
+            throw new NoSuchElementException("the satck is null");
         }
         else {
             Object item = last.data;
@@ -38,6 +39,8 @@ public class StacK {
 
 
     }
-
+    public Object peek(){
+        if ( first == null ) throw new NoSuchElementException(" the stack is null") ;
+    }
 
 }
