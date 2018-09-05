@@ -23,7 +23,19 @@ public class StacK {
         first.next= last;
     }
 
-    public void Pop(){
+    public Object Pop(){
+        if ( first == null){
+            return -1;
+        }
+        else {
+            Object item = last.data;
+            Node cont = first;
+            while ( cont.next.next != null) cont = cont.next;
+            last = cont;
+            return item;
+        }
+
+
 
     }
 
