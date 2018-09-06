@@ -1,7 +1,7 @@
 import java.util.NoSuchElementException;
 public class StacK {
 
-    private static class Node{
+    private static class Node{ // linked list helper class
     Object data; // Creating data type Object in our stacK not just Integer.
     Node next;
 
@@ -41,6 +41,19 @@ public class StacK {
     }
     public Object peek(){
         if ( first == null ) throw new NoSuchElementException(" the stack is null") ;
+        else{ Object item = last.data;
+        return item;}
+
+    }
+
+
+    public void push(Object data ){
+        if ( first == null) first = new Node(data, null );
+        else {
+            last.next = new Node(data, null);
+            last = last.next;
+        }
+
     }
 
 }
