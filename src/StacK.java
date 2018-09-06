@@ -1,14 +1,14 @@
 import java.util.NoSuchElementException;
-public class StacK<Item> {
+public class StacK<Object> {
 
-    private static class Node<Item>{
-        private Item data;
-        private Node<Item> next;
+    private static class Node<Object>{
+        private Object data;
+        private Node<Object> next;
 
     }
 
 
-    private Node<Item> first;
+    private Node<Object> first;
     private int n;
 
     public StacK(){
@@ -26,23 +26,23 @@ public class StacK<Item> {
 
 
 
-    public void push(Item data){
-        Node <Item> oldfirst = first;
-        first = new Node<Item>();
+    public void push(Object data){
+        Node <Object> oldfirst = first;
+        first = new Node<Object>();
         first.data = data;
         first.next = oldfirst;
         n++;
     }
 
-    public Item peek(){
+    public Object peek(){
         if (isEmpty())throw new NoSuchElementException("Stack is empty");
         return first.data;
     }
 
-    public Item pop(){
+    public Object pop(){
         if (isEmpty())throw new NoSuchElementException("Stack is empty");
         else {
-            Item data = first.data;
+            Object data = first.data;
             first = first.next;
             n--;
             return data;
